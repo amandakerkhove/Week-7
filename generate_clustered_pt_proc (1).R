@@ -21,6 +21,12 @@ val.at.center=1
 effect.range=15
 background=0.001
 
+#Q4 clustered small scale and not large
+val.at.center= 1
+effect.range=28
+background=0.9
+
+
 #variables that control the number of points and spatial dimensions
 Pointnum=100
 Xmin=-50
@@ -86,8 +92,13 @@ output_ppp = ppp(output.X, output.Y, c(Xmin,Xmax), c(Ymin,Ymax))
 quadrat.test(output_ppp, nx=2, ny= 2, alternative = "clustered") 
 #Question 3
 
-env<-envelope(output_ppp, fun = Kest, rmax=50, nsims= 100)
-kdata<-Kest(output_ppp)
-ggplot(data= kdata, aes(x=r, y=border))+
-    geom_line()
-    #geom_ribbon(aes(ymin = (data$obs-data$lo), ymax=(data$obs-data$hi)))
+plot(Kest(output_ppp))
+
+plot(envelope(output_ppp, Kest))
+
+plot(density(output_ppp))
+
+#Q4
+
+
+
