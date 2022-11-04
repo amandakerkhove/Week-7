@@ -24,7 +24,7 @@ background=0.001
 #Q4 clustered small scale and not large
 val.at.center= 1
 effect.range=28
-background=0.9
+background=0.95
 
 
 #variables that control the number of points and spatial dimensions
